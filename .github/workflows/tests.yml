@@ -20,7 +20,7 @@ jobs:
         uses: greatwizard/coverage-diff-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-filename: coverage.json
+          coverage-filename: report.json
           badge-enabled: false
       # - uses: ArtiomTr/jest-coverage-report-action@v2
       #   with:
