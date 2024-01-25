@@ -16,12 +16,13 @@ jobs:
       
       - run: npm ci
       - run: npm run test:ci
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          # working-directory: "tarpon"
-          coverage-file: report.json
-          test-script: npm run test:ci
-          annotations: coverage
-        env:
-          GH_TOKEN: ${{ secrets.TOKEN }}      
-          # base-coverage-file: report.json
+      - uses: vgrafe/jest-reports@v0.1.5
+      # - uses: ArtiomTr/jest-coverage-report-action@v2
+        # with:
+        #   # working-directory: "tarpon"
+        #   coverage-file: report.json
+        #   test-script: npm run test:ci
+        #   annotations: coverage
+        # env:
+        #   GH_TOKEN: ${{ secrets.TOKEN }}      
+        #   # base-coverage-file: report.json
