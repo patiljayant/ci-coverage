@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
       
       - run: npm ci
-      - run: npm run test:ci
+      # - run: npm run test:ci
       # - name: Coverage Diff
         # uses: greatwizard/coverage-diff-action@v1
         # with:
@@ -25,7 +25,7 @@ jobs:
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           # working-directory: "tarpon"
-          coverage-file: report.json
+          # coverage-file: report.json
           test-script: npm run test:ci
           annotations: coverage
         env:
