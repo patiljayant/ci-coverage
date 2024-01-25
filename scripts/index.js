@@ -21,12 +21,6 @@ const {
     const octokit = github.getOctokit(githubToken);
   
     const head = JSON.parse(await readFile(coverageFilename, "utf8"));
-    core.info(JSON.stringify(head))
-  
-    const pct = average(
-      Object.keys(head.total).map((t) => head.total[t].pct),
-      0
-    );
 
       core.info("Running on pull request branch");
       if (!existsSync(baseSummaryFilename)) {
