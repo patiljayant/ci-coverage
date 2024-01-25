@@ -19,7 +19,7 @@ jobs:
         id: testCoverage
         uses: anuraag016/Jest-Coverage-Diff@master
         with:
-          fullCoverageDiff: false // defaults to false, if made true whole coverage report is commented with the diff
+          fullCoverageDiff: false
           runCommand: npm run test:ci
           delta: 0.5
       # - uses: ArtiomTr/jest-coverage-report-action@v2
