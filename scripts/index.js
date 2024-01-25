@@ -16,7 +16,7 @@ const {
   
   async function run(githubToken) {
     const baseSummaryFilename = '../report-main.json';
-    const coverageFilename = '../report.json';
+    const coverageFilename = '../coverage/coverage-summary.json';
   
     const octokit = github.getOctokit(githubToken);
   
