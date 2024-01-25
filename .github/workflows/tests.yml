@@ -13,15 +13,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
       - run: npm ci
       - run: npm run test:ci
-      - uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          # working-directory: "tarpon"
-          coverage-file: report.json
-          test-script: npm run test:ci
-          annotations: coverage
+      - name: Test
+        run: |
+          node index.js "${{ github.token }}"
+        working-directory: "scripts"
         env:
-          GH_TOKEN: ${{ secrets.TOKEN }}      
-          # base-coverage-file: report.json
+          GH_TOKEN: ${{ secrets.TOKEN }}   
