@@ -17,7 +17,7 @@ function _renderPct(pct, addSign = true) {
 
 function computeDiff(base, head, options = {}) {
   const diff = coverageDiff.diff(base, head);
-
+  console.log(diff);
   let totalTitle = "Total coverage";
   let summaryTitle = "click to open the diff coverage report";
 
