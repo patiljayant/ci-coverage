@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      # - name: Debug
-      #   run: echo "Token is ${{ secrets.TOKEN }}"
       
       - run: npm ci
       - run: npm run test:ci
@@ -23,6 +21,7 @@ jobs:
           # working-directory: "tarpon"
           coverage-file: report.json
           test-script: npm run test:ci
+          annotations: coverage
         env:
           GH_TOKEN: ${{ secrets.TOKEN }}      
           # base-coverage-file: report.json
