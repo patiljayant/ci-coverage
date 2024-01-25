@@ -29,13 +29,14 @@ const {
       }
   
       const issue_number = context?.payload?.pull_request?.number;
+      core.info("will 1");
       const allowedToFail = core.getBooleanInput("allowed-to-fail");
       const base = JSON.parse(
         await readFile(baseSummaryFilename, "utf8")
       );
-  
+    core.info("will 2");
       const diff = computeDiff(base, head, { allowedToFail });
-  
+        core.info("will 3");
       if (issue_number) {
         await deleteExistingComments(octokit, context.repo, issue_number);
   
