@@ -28,6 +28,6 @@ jobs:
         #   coverage-file: report.json
         #   test-script: npm run test:ci
         #   annotations: coverage
-        # env:
-        #   GH_TOKEN: ${{ secrets.TOKEN }}      
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}      
         #   # base-coverage-file: report.json
