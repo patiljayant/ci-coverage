@@ -20,7 +20,6 @@ const {
   const { context } = github;
   
   async function run(githubToken) {
-    const githubToken = core.getInput("github-token");
     const baseSummaryFilename = 'report-main.json';
     const coverageFilename = 'report.json';
     const badgeThresholdOrange = core.getInput("badge-threshold-orange");

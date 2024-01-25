@@ -16,6 +16,7 @@ jobs:
       
       - name: Test
         run: |
-          node index.js argumentValue
+          node index.js "${{ github.token }}"
         working-directory: "scripts"
-      
+        env:
+          GH_TOKEN: ${{ secrets.TOKEN }}   
