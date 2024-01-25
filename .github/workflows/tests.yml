@@ -15,13 +15,19 @@ jobs:
         uses: actions/checkout@v2
       
       - run: npm ci
-      - run: npm run test:ci
-      - uses: ArtiomTr/jest-coverage-report-action@v2
+      - name: TestCoverage
+        id: testCoverage
+        uses: anuraag016/Jest-Coverage-Diff@master
         with:
-          # working-directory: "tarpon"
-          coverage-file: report.json 
-          base-coverage-file: main-report.json
-          # test-script: npm run test:ci
-          annotations: coverage
+          fullCoverageDiff: false // defaults to false, if made true whole coverage report is commented with the diff
+          runCommand: npm run test:ci
+          delta: 0.5
+      # - uses: ArtiomTr/jest-coverage-report-action@v2
+      #   with:
+      #     # working-directory: "tarpon"
+      #     coverage-file: report.json 
+      #     base-coverage-file: main-report.json
+      #     # test-script: npm run test:ci
+      #     annotations: coverage
         env:
           GH_TOKEN: ${{ secrets.TOKEN }}     
