@@ -20,7 +20,7 @@ jobs:
         with:
           # working-directory: "tarpon"
           coverage-file: report.json 
-          base-coverage-file: main/report.json
+          base-coverage-file: main-report.json
           # test-script: npm run test:ci
           annotations: coverage
         env:
