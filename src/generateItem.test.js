@@ -10,7 +10,7 @@ test("should create weapon object", () => {
 
   const weapon = generateItem({
     type: "weapon",
-    rarity: "epic",
+    rarity: "epi",
   });
 
   expect(weapon).toMatchObject(expectedWeapon);
@@ -25,7 +25,7 @@ test("should create armor object", () => {
   };
 
   const armor = generateItem({
-    type: "armor",
+    type: "armo",
     rarity: "rare",
   });
 
