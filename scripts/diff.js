@@ -1,4 +1,5 @@
 const coverageDiff = require("coverage-diff");
+const core = require("@actions/core");
 
 const ICONS = {
   OK: "✅",
@@ -16,8 +17,9 @@ function _renderPct(pct, addSign = true) {
 }
 
 function computeDiff(base, head, options = {}) {
+  core.info("diff");
   const diff = coverageDiff.diff(base, head);
-  console.log(diff);
+  core.info(diff);
   let totalTitle = "Total coverage";
   let summaryTitle = "click to open the diff coverage report";
 
