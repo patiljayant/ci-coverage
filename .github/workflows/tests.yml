@@ -19,9 +19,9 @@ jobs:
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
           # working-directory: "tarpon"
-          coverage-file: report.json
-          test-script: npm run test:ci
+          coverage-file: report.json 
+          base-coverage-file: main/report.json
+          # test-script: npm run test:ci
           annotations: coverage
         env:
-          GH_TOKEN: ${{ secrets.TOKEN }}      
-          # base-coverage-file: report.json
+          GH_TOKEN: ${{ secrets.TOKEN }}     
