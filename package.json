@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci --coverage --testLocationInResults --json --outputFile=\"report.json\""
+    "test:ci": "jest --ci --coverage --collectCoverage=true --coverageDirectory='./' --coverageReporters='json-summary'"
   },
   "repository": {
     "type": "git",
