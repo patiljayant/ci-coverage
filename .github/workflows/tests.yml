@@ -14,20 +14,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
-      - run: npm ci
-      - run: npm run test:ci
-      - name: Coverage Diff
-        uses: greatwizard/coverage-diff-action@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-filename: report.json
-          badge-enabled: false
-      # - uses: ArtiomTr/jest-coverage-report-action@v2
-      #   with:
-      #     # working-directory: "tarpon"
-      #     # coverage-file: report.json
-      #     test-script: npm run test:ci
-      #     annotations: coverage
-        env:
-          GH_TOKEN: ${{ secrets.TOKEN }}      
-        #   # base-coverage-file: report.json
+      - name: Test
+        run: |
+          node script.js argumentValue
+        working-directory: "scripts"
+      

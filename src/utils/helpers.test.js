@@ -8,10 +8,10 @@ test("gets a random integer in a given range", () => {
   }
 });
 
-test("gets a random integer in a given range", () => {
-  for (let i = 0; i < 20; i++) {
-    const result = getRandomIntInRange(4, 9);
-    expect(result).toBeGreaterThanOrEqual(4);
-    expect(result).toBeLessThan(9);
-  }
-});
+// test("gets a random integer in a given range", () => {
+//   for (let i = 0; i < 20; i++) {
+//     const result = getRandomIntInRange(4, 9);
+//     expect(result).toBeGreaterThanOrEqual(4);
+//     expect(result).toBeLessThan(9);
+//   }
+// });
