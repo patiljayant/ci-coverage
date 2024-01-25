@@ -19,7 +19,7 @@ jobs:
       - run: npm run test:ci
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          github-token: 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
+          github-token: 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
           # working-directory: "tarpon"
           coverage-file: report.json
           test-script: npm run test:ci
