@@ -36,6 +36,6 @@ const { generateItem } = require("./generateItem");
 //   generateItem({ type: "weapon" });
 // });
 
-// test("should return null when no type passed", () => {
-//   generateItem();
-// });
+test("should return null when no type passed", () => {
+  generateItem();
+});
