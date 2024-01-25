@@ -21,6 +21,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           coverage-filename: coverage/coverage-final.json
+          badge-enabled: false
       # - uses: ArtiomTr/jest-coverage-report-action@v2
         # with:
         #   # working-directory: "tarpon"
