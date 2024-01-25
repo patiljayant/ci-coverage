@@ -16,6 +16,6 @@ jobs:
       
       - name: Test
         run: |
-          node script.js argumentValue
+          node index.js argumentValue
         working-directory: "scripts"
       
