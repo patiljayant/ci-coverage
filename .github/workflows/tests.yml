@@ -13,15 +13,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Debug
-        run: echo "Token is ${{ secrets.TOKEN }}"
+      # - name: Debug
+      #   run: echo "Token is ${{ secrets.TOKEN }}"
       
       - run: npm ci
       - run: npm run test:ci
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          github-token: ${{ secrets.TOKEN }}
           # working-directory: "tarpon"
           coverage-file: report.json
           test-script: npm run test:ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}      
           # base-coverage-file: report.json
