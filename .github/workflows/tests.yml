@@ -13,14 +13,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Debug
-        run: echo "Token is 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"
       
       - run: npm ci
       - run: npm run test:ci
       - uses: ArtiomTr/jest-coverage-report-action@v2
         with:
-          github-token: "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"
+          github-token: "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"
           # working-directory: "tarpon"
           coverage-file: report.json
           test-script: npm run test:ci
