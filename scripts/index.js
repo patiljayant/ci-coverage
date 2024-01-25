@@ -6,18 +6,18 @@ const {
     mkdtemp,
   } = require("fs/promises");
   const { existsSync } = require("fs");
-  const path = require("path");
+//   const path = require("path");
   const core = require("@actions/core");
   const github = require("@actions/github");
   
-  const { gitClone, gitUpdate } = require("./git");
-  const { isBranch, isMainBranch } = require("./branch");
-  const { getShieldURL, getJSONBadge } = require("./badge");
-  const { average } = require("./math");
-  const { computeDiff } = require("./diff");
-  const { addComment, deleteExistingComments } = require("./comment");
+//   const { gitClone, gitUpdate } = require("./git");
+//   const { isBranch, isMainBranch } = require("./branch");
+//   const { getShieldURL, getJSONBadge } = require("./badge");
+//   const { average } = require("./math");
+//   const { computeDiff } = require("./diff");
+//   const { addComment, deleteExistingComments } = require("./comment");
   
-  const { context } = github;
+//   const { context } = github;
   
   async function run(githubToken) {
     const baseSummaryFilename = 'report-main.json';
@@ -29,10 +29,10 @@ const {
     const head = JSON.parse(await readFile(coverageFilename, "utf8"));
     core.info(JSON.stringify(head))
   
-    const pct = average(
-      Object.keys(head.total).map((t) => head.total[t].pct),
-      0
-    );
+    // const pct = average(
+    //   Object.keys(head.total).map((t) => head.total[t].pct),
+    //   0
+    // );
   
     // if (
     //   isBranch() &&
