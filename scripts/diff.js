@@ -71,6 +71,8 @@ function computeDiff(base, head, options = {}) {
     } with a coverage regression`;
   }
 
+  core.info(table)
+
   let totals = {};
   let globalRegression = false;
   CRITERIAS.forEach((criteria) => {
