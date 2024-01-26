@@ -42,6 +42,7 @@ function computeDiff(base, head, options = {}) {
     if (fileRegression) {
       countRegression++;
     }
+    core.info(element.lines.pct, element.branches.pct, element.functions.pct, element.statements.pct)
 
     table.push({
       icon: fileRegression ? ICONS.KO : ICONS.OK,
@@ -70,8 +71,6 @@ function computeDiff(base, head, options = {}) {
       countRegression > 1 ? "s" : ""
     } with a coverage regression`;
   }
-
-  core.info(table.map((row) => row))
 
   let totals = {};
   let globalRegression = false;
