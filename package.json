@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci --coverage"
+    "test:ci": "jest --ci --coverage",
+    "test:coverage": "jest --ci --coverage && node scripts/generate-coverage-stats.js"
   },
   "repository": {
     "type": "git",
