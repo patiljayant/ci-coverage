@@ -17,7 +17,6 @@ function _renderPct(pct, addSign = true) {
 }
 
 function computeDiff(base, head, options = {}) {
-  core.info("diff");
   const diff = coverageDiff.diff(base, head);
   let totalTitle = "Total coverage";
   let summaryTitle = "click to open the diff coverage report";
@@ -41,27 +40,26 @@ function computeDiff(base, head, options = {}) {
     if (fileRegression) {
       countRegression++;
     }
-    core.info(file)
-    core.info(JSON.stringify(base))
+    
 
     table.push({
       icon: fileRegression ? ICONS.KO : ICONS.OK,
       filename: file,
       lines: {
         pct: _renderPct(head[file].lines.pct, false),
-        diff: _renderPct(head[file].lines.pct - base[file].lines.pct),
+        diff: _renderPct(element.lines.pct),
       },
       branches: {
         pct: _renderPct(head[file].branches.pct, false),
-        diff: _renderPct(head[file].branches.pct - base[file].branches.pct),
+        diff: _renderPct(element.branches.pct),
       },
       functions: {
         pct: _renderPct(head[file].functions.pct, false),
-        diff: _renderPct(head[file].functions.pct - base[file].functions.pct),
+        diff: _renderPct(element.functions.pct),
       },
       statements: {
         pct: _renderPct(head[file].statements.pct, false),
-        diff: _renderPct(head[file].statements.pct - base[file].statements.pct),
+        diff: _renderPct(element.statements.pct),
       },
     });
   });
