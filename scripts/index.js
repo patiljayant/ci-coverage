@@ -1,14 +1,9 @@
 const {
     readFile,
-    writeFile,
-    copyFile,
-    mkdir,
-    mkdtemp,
   } = require("fs/promises");
   const { existsSync } = require("fs");
   const core = require("@actions/core");
   const github = require("@actions/github");
-  const { average } = require("./math");
   const { computeDiff } = require("./diff");
   const { addComment, deleteExistingComments } = require("./comment");
   
