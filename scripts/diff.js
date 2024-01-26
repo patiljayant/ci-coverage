@@ -42,7 +42,7 @@ function computeDiff(base, head, options = {}) {
     if (fileRegression) {
       countRegression++;
     }
-    core.info(base[file])
+    core.info(base)
 
     table.push({
       icon: fileRegression ? ICONS.KO : ICONS.OK,

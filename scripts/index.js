@@ -33,7 +33,7 @@ const {
       const base = JSON.parse(
         await readFile(baseSummaryFilename, "utf8")
       );
-      
+      core.info(JSON.stringify(base))
       const diff = computeDiff(base, head, { allowedToFail: true });
         core.info("will 3");
       if (issue_number) {
