@@ -49,19 +49,19 @@ function computeDiff(base, head, options = {}) {
       filename: file,
       lines: {
         pct: _renderPct(head[file].lines.pct, false),
-        diff: _renderPct(element.lines.pct),
+        diff: _renderPct(head[file].lines.pct - base[file].lines.pct),
       },
       branches: {
         pct: _renderPct(head[file].branches.pct, false),
-        diff: _renderPct(element.branches.pct),
+        diff: _renderPct(head[file].branches.pct - base[file].branches.pct),
       },
       functions: {
         pct: _renderPct(head[file].functions.pct, false),
-        diff: _renderPct(element.functions.pct),
+        diff: _renderPct(head[file].functions.pct - base[file].functions.pct),
       },
       statements: {
         pct: _renderPct(head[file].statements.pct, false),
-        diff: _renderPct(element.statements.pct),
+        diff: _renderPct(head[file].statements.pct - base[file].statements.pct),
       },
     });
   });
