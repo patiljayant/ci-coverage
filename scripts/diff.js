@@ -19,7 +19,6 @@ function _renderPct(pct, addSign = true) {
 function computeDiff(base, head, options = {}) {
   core.info("diff");
   const diff = coverageDiff.diff(base, head);
-  core.info(diff);
   let totalTitle = "Total coverage";
   let summaryTitle = "click to open the diff coverage report";
 
@@ -42,7 +41,8 @@ function computeDiff(base, head, options = {}) {
     if (fileRegression) {
       countRegression++;
     }
-    core.info(base)
+    core.info(file)
+    core.info(JSON.stringify(base))
 
     table.push({
       icon: fileRegression ? ICONS.KO : ICONS.OK,
