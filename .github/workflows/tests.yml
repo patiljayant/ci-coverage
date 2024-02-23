@@ -29,6 +29,6 @@ jobs:
           overwrite: true
       - uses: actions/download-artifact@v4
         with:
-          name: abcd.txt 
+          name: scripts abcd.txt 
       - name: Display structure of downloaded files
-        run: ls -R
+        run: cd scripts && ls -l
