@@ -15,11 +15,9 @@ jobs:
 
       - run: npm ci
       - run: npm run test:coverage
-      - name: Push coverage report to main branch
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add report-main.json
-          git diff-index --quiet HEAD || git commit -m 'Update coverage stats'
-      - name: Push changes
-        run: git push
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-main.json
+          path: report-main.json
+          overwrite: true
