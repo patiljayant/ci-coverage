@@ -23,6 +23,8 @@ jobs:
           path: artifact
           branch: main
           if_no_artifact_found: warn
+      - name: Test Download
+        run: cd artigact && ls -l
       - name: Test
         run: |
           node index.js "${{ github.token }}"
