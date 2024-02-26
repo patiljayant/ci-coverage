@@ -18,7 +18,12 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: report-main.json
-          path: report-main.json 
+          path: report-main.json
+      - id: vars
+        uses: bcgov-nr/action-get-pr@v0.0.1
+      - name: Echo PR number
+        run: | 
+          echo "PR: ${{ steps.vars.outputs.pr }}" 
       - name: Test
         run: |
           node index.js "${{ github.token }}"
