@@ -1,7 +1,7 @@
 name: Jest Tests
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 

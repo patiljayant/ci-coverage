@@ -1,7 +1,7 @@
 name: Merge to Main Workflow
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
