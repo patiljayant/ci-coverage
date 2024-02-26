@@ -33,4 +33,4 @@ jobs:
           path: artifact
           branch: main
       - name: Test
-        run: ls -l
+        run: cd artifact && ls -l
