@@ -19,14 +19,18 @@ jobs:
       #   with:
       #     name: report-main.json
       #     path: report-main.json
-      - id: vars
-        uses: bcgov-nr/action-get-pr@v0.0.1
-      - name: Echo PR number
-        run: | 
-          echo "PR: ${{ steps.vars.outputs.pr }}" 
+      # - name: Test
+      #   run: |
+      #     node index.js "${{ github.token }}"
+      #   working-directory: "scripts"
+      #   env:
+      #     GH_TOKEN: ${{ secrets.TOKEN }}   
+      - name: Download
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: comment.yml
+          name: report-main.json
+          path: artifact
+          branch: main
       - name: Test
-        run: |
-          node index.js "${{ github.token }}"
-        working-directory: "scripts"
-        env:
-          GH_TOKEN: ${{ secrets.TOKEN }}   
+        run: ls -l
