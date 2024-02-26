@@ -15,6 +15,13 @@ jobs:
         uses: actions/checkout@v2
       - run: npm ci
       - run: npm run test:ci
+      - name: Download
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: comment.yml
+          name: report-main.json
+          path: artifact
+          branch: main
       - name: Test
         run: |
           node index.js "${{ github.token }}"

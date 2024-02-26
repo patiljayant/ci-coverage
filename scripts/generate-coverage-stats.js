@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const generatedFileName = path.resolve(__dirname, '../coverage/coverage-summary.json');
-const targetFileName = path.resolve(__dirname, '../report-main.json');
+const targetFileName = path.resolve(__dirname, '../artifact/report-main.json');
 
 
 fs.readFile(generatedFileName, 'utf8', (err, data) => {
