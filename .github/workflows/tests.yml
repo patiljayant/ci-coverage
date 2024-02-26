@@ -15,10 +15,10 @@ jobs:
         uses: actions/checkout@v2
       - run: npm ci
       - run: npm run test:ci
-      - uses: actions/download-artifact@v4
-        with:
-          name: report-main.json
-          path: report-main.json
+      # - uses: actions/download-artifact@v4
+      #   with:
+      #     name: report-main.json
+      #     path: report-main.json
       - id: vars
         uses: bcgov-nr/action-get-pr@v0.0.1
       - name: Echo PR number
