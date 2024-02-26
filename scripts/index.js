@@ -10,7 +10,7 @@ const {
   const { context } = github;
   
   async function run(githubToken) {
-    const baseSummaryFilename = '../artifact/report-main.json';
+    const baseSummaryFilename = '../artifact/coverage-summary.json';
     const coverageFilename = '../coverage/coverage-summary.json';
   
     const octokit = github.getOctokit(githubToken);
