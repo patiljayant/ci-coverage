@@ -19,15 +19,14 @@ jobs:
           REPO="ci-coverage"
           
           # GitHub Personal Access Token
-          TOKEN=${{ secrets.TOKEN }}
+          # TOKEN=${{ secrets.TOKEN }}
           
           # Make a request to get the last merged pull request
-          response=$(curl -s -H "Authorization: token $TOKEN" \
-              "https://api.github.com/repos/$OWNER/$REPO/pulls?state=closed&sort=updated&direction=desc&per_page=1")
+          response=$(curl -s -H "Authorization: token ${{secrets.TOKEN}}" \
+              "https://api.github.com/repos/patiljayant/ci-coverage/pulls?state=closed&sort=updated&direction=desc&per_page=1")
           
           # Extract pull request number from the response
-          # pull_request_number=$(jq -r '.[0].number' <<<"$response")
-          
+          # pull_request_number=$(jq -r '.[0].number' <<<"$response")       
           echo "Last merged pull request number: $response"
       # - run: npm ci
       # - run: npm run test:ci
