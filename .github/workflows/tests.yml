@@ -13,21 +13,37 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - run: npm ci
-      - run: npm run test:ci
-      - name: Download
-        uses: dawidd6/action-download-artifact@v3
-        with:
-          workflow: comment.yml
-          name: report-main.json
-          path: artifact
-          branch: main
-          if_no_artifact_found: warn
-      - name: Test Download
-        run: cd artifact && ls -l
-      - name: Test
+      - name: Get PR number
         run: |
-          node index.js "${{ github.token }}"
-        working-directory: "scripts"
-        env:
-          GH_TOKEN: ${{ secrets.TOKEN }}   
+          OWNER="patiljayant"
+          REPO="ci-coverage"
+          
+          # GitHub Personal Access Token
+          TOKEN=$GH_TOKEN
+          
+          # Make a request to get the last merged pull request
+          response=$(curl -s -H "Authorization: token $TOKEN" \
+              "https://api.github.com/repos/$OWNER/$REPO/pulls?state=closed&sort=updated&direction=desc&per_page=1")
+          
+          # Extract pull request number from the response
+          pull_request_number=$(jq -r '.[0].number' <<<"$response")
+          
+          echo "Last merged pull request number: $pull_request_number"
+      # - run: npm ci
+      # - run: npm run test:ci
+      # - name: Download
+      #   uses: dawidd6/action-download-artifact@v3
+      #   with:
+      #     workflow: comment.yml
+      #     name: report-main.json
+      #     path: artifact
+      #     branch: main
+      #     if_no_artifact_found: warn
+      # - name: Test Download
+      #   run: cd artifact && ls -l
+      # - name: Test
+      #   run: |
+      #     node index.js "${{ github.token }}"
+      #   working-directory: "scripts"
+      #   env:
+      #     GH_TOKEN: ${{ secrets.TOKEN }}   
