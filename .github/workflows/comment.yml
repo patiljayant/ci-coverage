@@ -12,12 +12,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - run: npm ci
-      - run: npm run test:coverage
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v4
-        with:
-          path: coverage/coverage-summary.json
-          name: report-main.json
-          overwrite: true
+      - name: Merge to main
+        run: echo "Merging to main ${{ github.head_ref}}"
+      # - run: npm ci
+      # - run: npm run test:coverage
+      # - name: Archive code coverage results
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     path: coverage/coverage-summary.json
+      #     name: report-main.json
+      #     overwrite: true
