@@ -28,7 +28,7 @@ jobs:
           # Extract pull request number from the response
           # pull_request_number=$(jq -r '.[0].number' <<<"$response")
           
-          echo "Last merged pull request number: $response"
+          echo "Last merged pull request number: $TOKEN"
       # - run: npm ci
       # - run: npm run test:ci
       # - name: Download
