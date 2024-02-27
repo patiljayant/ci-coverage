@@ -26,9 +26,9 @@ jobs:
               "https://api.github.com/repos/$OWNER/$REPO/pulls?state=closed&sort=updated&direction=desc&per_page=1")
           
           # Extract pull request number from the response
-          pull_request_number=$(jq -r '.[0].number' <<<"$response")
+          # pull_request_number=$(jq -r '.[0].number' <<<"$response")
           
-          echo "Last merged pull request number: $pull_request_number"
+          echo "Last merged pull request number: $response"
       # - run: npm ci
       # - run: npm run test:ci
       # - name: Download
