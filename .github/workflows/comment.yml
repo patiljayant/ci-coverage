@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Merge to main
-        run: echo "Merging to main fron branch ${{ github.ref }}"
+        run: echo "Merging to main fron branch ${{ toJson(github) }}"
       # - run: npm ci
       # - run: npm run test:coverage
       # - name: Archive code coverage results
